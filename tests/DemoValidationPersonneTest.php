@@ -21,6 +21,7 @@ class DemoValidationPersonneTest extends TestCase
 	}
 //Validation de base
 	
+	/* rqt-1: avoir des personnes */
 	/** @test */
 	public function une_personne_sans_attributs_n_est_pas_valide()
 	{
@@ -28,12 +29,14 @@ class DemoValidationPersonneTest extends TestCase
 		$this->assertFalse($personneVide->validate(), "la validation passe sans aucun attributs");
 	}
 	
+	/* rqt-1: avoir des personnes */
 	/** @test */
 	public function la_personne_par_defaut_est_valide()
 	{
 		$this->assertTrue($this->personne->validate(), "la personne par défaut du test ne valide plus");
 	}
 	
+	/* rqt-1: avoir des personnes */
 	/** @test 
 	 * @dataProvider nullProvider 
 	 */
@@ -54,6 +57,8 @@ class DemoValidationPersonneTest extends TestCase
 	}
 	
 // Validation de la date de naissance	
+	/* rqt-1: avoir des personnes, format de la date */
+	
 	/** @test
 	 * @dataProvider mauvaisFormatNaissanceProvider
 	 */
@@ -74,6 +79,8 @@ class DemoValidationPersonneTest extends TestCase
 		];
 	}
 	
+	/* rqt-1: avoir des personnes, format de la date*/
+	
 	/** @test
 	 * @dataProvider bonFormatNaissanceProvider
 	 */
@@ -92,6 +99,7 @@ class DemoValidationPersonneTest extends TestCase
 	}
 		
 // Validation du téléphone	
+	/* rqt-1: avoir des personnes, format du téléphone */
 	/** @test
 	 * @dataProvider mauvaisFormatTelephoneProvider
 	 */
@@ -113,6 +121,7 @@ class DemoValidationPersonneTest extends TestCase
 		];
 	}
 	
+	/* rqt-1: avoir des personnes, format du téléphone */
 	/** @test
 	 * @dataProvider bonFormatTelephoneProvider
 	 */
