@@ -17,7 +17,7 @@ class CreatePersonnesTable extends Migration
             $table->increments('id');
             $table->string('nom');
             $table->string('dateNaissance');
-            $table->string('telephone');
+            $table->string('telephone')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
