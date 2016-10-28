@@ -17,4 +17,4 @@ Route::get('/', function () {
 
 
 Route::get('/personnes', 'PersonnesController@index');
-
+Route::post('/personnes', 'PersonnesController@store');

@@ -16,4 +16,9 @@ class PersonnesController extends Controller
     	$personnes = Personne::all();
     	return view('personnes/index', compact('personnes'));
     }
+    
+    public function store()
+    {
+    	return 'allo';
+    }
 }

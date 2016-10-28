@@ -49,4 +49,27 @@ class DemoControleurPersonneTest extends TestCase
     	
     }
     
+    
+    /**
+     * @test
+     */
+    public function le_controlleur_permet_la_sauvegarde_d_une_personne()
+    {
+    	$this->call('post', '/personnes');
+    	$this->assertResponseOk();
+    }
+    
+    /**
+     * @test
+     */
+    public function le_controlleur_empeche_la_creation_invalide_d_une_personne()
+    {
+    	$personne = [];
+    	$response = $this->call('post', '/personnes', $personne);
+    	$errors = $response->original->getData()['errors'];
+    	dd($errors); 
+    }
+    
+   
+    
 }
